@@ -1,13 +1,253 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 10px 0 10px;
+}
+
+.custom-col {
+  flex: 0 0 calc(50% - 10px); /* Adjust width and margin as needed */
+  margin-bottom: 20px; /* Adjust as needed */
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  border: 2px red solid;
+}
+
+/* Adjust styles for smaller screens */
+@media screen and (max-width: 768px) {
+  .custom-col {
+    flex-basis: 100%; /* Full width on smaller screens */
+  }
+}
+
+.btn {
+  padding: 5px 15px;
+  border-style: none;
+  border-radius: 5px;
+  background-color: rgb(97, 170, 23);
+  color: white;
+}
+
+.btn:hover {
+  background-color: hsl(90, 76%, 45%);
+}
+
+.btn:active {
+  background-color: hsl(90, 76%, 50%);
+}
+
+.btn-add-options {
+  float: right;
+}
+
+.options-config {
+  border: 2px solid hsl(0, 0%, 95%);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+select {
+  padding: 5px;
+  border-radius: 5px;
+  border-style: none;
+  background-color: hsl(0, 0%, 95%);
+}
+
+.options-config label {
+  margin-right: auto;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: hsl(0, 0%, 55%);
+}
+
+.tabs {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.tab-title {
+  margin-right: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  position: relative;
+  color: hsl(0, 0%, 55%);
+}
+
+.tab-title.active {
+  padding-bottom: 5px;
+  color: rgb(97, 170, 23);
+}
+
+.underscore {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px; /* Height of the underscore */
+  background-color: rgb(97, 170, 23); /* Underscore color */
+  opacity: 0; /* Initially hidden */
+}
+
+.tab-title.active .underscore {
+  opacity: 1; /* Show underscore when tab is active */
+}
+
+.option-config {
+  border: 2px solid hsl(0, 0%, 95%);
+  border-radius: 2px;
+  padding: 10px;
+}
+
+.tab-config {
+  display: flex;
+  gap: 1rem;
+  /* flex-direction: column; */
+}
+
+.input-row {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.input-row label {
+  font-size: 13px;
+  color: hsl(0, 0%, 55%);
+}
+
+.input-row input {
+  padding: 5px;
+  border-radius: 2px;
+  border-style: none;
+  background-color: hsl(0, 0%, 95%);
+}
+
+span.helper {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 10px;
+  color: hsl(0, 0%, 55%);
+  margin-top: 5px;
+}
+
+.required {
+  display: flex;
+  align-items: flex-end;
+  margin-left: 15px;
+  margin-top: 10px;
+  gap: 0.3rem;
+}
+
+.required input {
+  margin-bottom: 10px;
+}
+
+.required label {
+  font-size: 12px;
+  color: hsl(0, 0%, 40%);
+  /* padding-top: 2px; */
+}
+
+.opt-config-value {
+  display: flex;
+  flex-direction: column;
+}
+
+.opt-config-value label {
+  font-size: 10px;
+  color: hsl(0, 0%, 55%);
+}
+
+.opt-config-value input {
+  padding: 5px;
+  border-radius: 2px;
+  border-style: none;
+  background-color: hsl(0, 0%, 95%);
+}
+
+/* Test Style */
+/* --------------------------------------- */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  color: #343a40;
+  line-height: 1;
+}
+
+.accordion {
+  width: 700px;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.item {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  padding: 20px 24px;
+  padding-right: 48px;
+  cursor: pointer;
+  border-top: 4px solid #fff;
+  border-bottom: 4px solid #fff;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  column-gap: 24px;
+  row-gap: 32px;
+  align-items: center;
+}
+
+.number {
+  font-size: 24px;
+  font-weight: 500;
+  color: #ced4da;
+}
+
+.title,
+.icon {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.content-box {
+  grid-column: 2 / -1;
+  padding-bottom: 16px;
+  line-height: 1.6;
+}
+
+.content-box ul {
+  color: #868e96;
+  margin-left: 16px;
+  margin-top: 16px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* OPEN STATE */
+.open {
+  border-top: 4px solid #087f5b;
+}
+
+.open .number,
+.open .text {
+  color: #087f5b;
 }
