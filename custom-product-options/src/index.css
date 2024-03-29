@@ -11,18 +11,19 @@
   margin: 20px 10px 0 10px;
 }
 
-.custom-col {
+.options-config-col,
+.options-preview-col {
   flex: 0 0 calc(50% - 10px); /* Adjust width and margin as needed */
   margin-bottom: 20px; /* Adjust as needed */
   padding: 10px;
   box-sizing: border-box;
   text-align: center;
-  border: 2px red solid;
 }
 
 /* Adjust styles for smaller screens */
 @media screen and (max-width: 768px) {
-  .custom-col {
+  .options-config-col,
+  .options-preview-col {
     flex-basis: 100%; /* Full width on smaller screens */
   }
 }
@@ -89,7 +90,7 @@ select {
   color: rgb(97, 170, 23);
 }
 
-.underscore {
+.active-tab {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -99,7 +100,7 @@ select {
   opacity: 0; /* Initially hidden */
 }
 
-.tab-title.active .underscore {
+.tab-title.active .active-tab {
   opacity: 1; /* Show underscore when tab is active */
 }
 
@@ -191,17 +192,16 @@ body {
   line-height: 1;
 }
 
-.accordion {
+.options-accordion {
   width: 700px;
   margin: 100px auto;
   display: flex;
   flex-direction: column;
-  gap: 24px;
 }
 
 .item {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-  padding: 20px 24px;
+  padding: 12px 24px;
   padding-right: 48px;
   cursor: pointer;
   border-top: 4px solid #fff;
@@ -250,4 +250,8 @@ body {
 .open .number,
 .open .text {
   color: #087f5b;
+}
+
+.close {
+  border-top: 4px solid hsl(180, 1%, 44%);
 }
